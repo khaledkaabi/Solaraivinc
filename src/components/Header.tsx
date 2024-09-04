@@ -21,8 +21,8 @@ const Header: React.FC = () => {
     };
 
     const logout = () => {
-        localStorage.clear()
-        navigate('/login')
+        // localStorage.clear()
+        // navigate('/login')
     }
 
     return (

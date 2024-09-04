@@ -43,27 +43,27 @@ const Home: React.FC = () => {
 
     return (
         <div>
-        <Header />
-        <div className="mt-4 home-padding">
-        {deliveryData.map((delivery: Delivery) => (
-            <div key={delivery.id} className="d-flex flex-column p-3 mb-3 border rounded">
-                <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex align-items-center">
-                        <IconButton>
-                            {getStatusIcon(delivery.status)}
-                        </IconButton>
-                        <h5 className="ms-2 mb-0">{delivery.status}</h5>
+            <Header />
+            <div className="mt-4 home-padding">
+                {deliveryData.map((delivery: Delivery) => (
+                    <div key={delivery.id} className="d-flex flex-column p-3 mb-3 border rounded">
+                        <div className="d-flex justify-content-between align-items-center">
+                            <div className="d-flex align-items-center">
+                                <IconButton>
+                                    {getStatusIcon(delivery.status)}
+                                </IconButton>
+                                <h5 className="ms-2 mb-0">{delivery.status}</h5>
+                            </div>
+                            <small>{formatDate(delivery.last_msg_date)}</small>
+                        </div>
+                        <div className="mt-2">
+                            <p className="mb-1">{delivery.last_msg}</p>
+                        </div>
                     </div>
-                    <small>{formatDate(delivery.last_msg_date)}</small>
-                </div>
-                <div className="mt-2">
-                    <p className="mb-1">{delivery.last_msg}</p>
-                </div>
+                ))}
             </div>
-        ))}
-    </div>
-    <Footer />
-    </div>
+            <Footer />
+        </div>
     );
 };
 
